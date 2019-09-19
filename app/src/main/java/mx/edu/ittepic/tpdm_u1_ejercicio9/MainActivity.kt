@@ -32,11 +32,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun calcular(){
+        layTabla?.removeAllViews()
         n = txtN?.text.toString().toInt()
         m = txtM?.text.toString().toInt()
         Toast.makeText(this,"datos $n, $m",Toast.LENGTH_LONG).show()
         (1..m).forEach {
-            var r = n*m
+            var r = n*it
             var etiqueta = TextView(this)
             etiqueta.setText("$n x $it = $r")
             layTabla?.addView(etiqueta)
